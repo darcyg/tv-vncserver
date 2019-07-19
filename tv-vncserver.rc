@@ -1,0 +1,9 @@
+on property:persist.vendor.vnc.password=*          
+    start vncserver     
+
+service vncserver /odm/bin/tv-vncserver -p ${persist.vendor.vnc.password}             
+    disabled
+    class core
+    user root
+    group root
+    seclabel u:r:su:s0
